@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div>
+        <p class="eyebrow">STUDENT PRODUCTIVITY</p>
+        <h1>My Task Manager</h1>
+        <p class="subtitle">Plan your day. Get things done.</p>
+      </div>
+      <div class="header-icon">✓</div>
+    </header>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span>Total Tasks</span>
+        <strong id="totalCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Pending</span>
+        <strong id="pendingCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Completed</span>
+        <strong id="completedCount">0</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Add a New Task</h2>
+      <form id="taskForm">
+        <label for="taskInput">Task name</label>
+        <div class="form-row">
+          <input id="taskInput" type="text"
+            placeholder="e.g. Complete Python assignment"
+            maxlength="100" required>
+          <select id="priorityInput" aria-label="Task priority">
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+          </select>
+          <button type="submit" class="add-btn">+ Add Task</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="list-heading">
+        <h2>My Tasks</h2>
+        <span id="taskSummary">0 tasks</span>
+      </div>
+
+      <div class="filters" aria-label="Filter tasks">
+        <button class="filter active" data-filter="All">All</button>
+        <button class="filter" data-filter="Pending">Pending</button>
+        <button class="filter" data-filter="Completed">Completed</button>
+      </div>
+
+      <div id="taskList" class="task-list"></div>
+      <p id="emptyMessage" class="empty-message">
+        No tasks yet. Add your first task above!
+      </p>
+    </section>
+
+    <footer>Student Task Manager · Built with HTML, CSS & JavaScript</footer>
+  </main>
+</body>
+</html>
